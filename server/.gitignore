@@ -1,0 +1,5 @@
+*.tsp
+*output.txt
+*output.res
+deadhead_index_*.json
+google_cache_path

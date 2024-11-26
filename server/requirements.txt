@@ -1,0 +1,9 @@
+fastapi==0.111.0
+pyconcorde @ git+https://github.com/jvkersch/pyconcorde
+requests
+geopy
+load_dotenv
+tsplib95
+concorde
+urlparse
+itertools

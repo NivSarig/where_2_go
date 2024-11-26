@@ -1,0 +1,6 @@
+How to run :
+
+tspsolver/concorde_env/bin/python solve_tsp.py --input examples/hk48.tsp  --output test.txt
+
+The files format follow the MATRIX format for the standard TSPLIB, see
+http://comopt.ifi.uni-heidelberg.de/software/TSPLIB95/tsp95.pdf for documentation OR just look in the example file.

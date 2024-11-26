@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "59ffbc45-f9f6-4304-84d4-eeab4a298e0b",
+		"name": "Route Your Way",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9462573"
+	},
+	"item": [
+		{
+			"name": "Create",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let { game_id } = pm.response.json()",
+							"pm.environment.set('current_game', game_id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "city",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/game?location=Moscow",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"game"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Moscow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Join",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/game/{{current_game}}/contestant?name=Lital",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"game",
+						"{{current_game}}",
+						"contestant"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Lital"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/game/{{current_game}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"game",
+						"{{current_game}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Done",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/game/{{current_game}}/done",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"game",
+						"{{current_game}}",
+						"done"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
